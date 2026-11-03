@@ -1,8 +1,8 @@
 <script>
   const certificates = [
-    { name: "Cisco Cybersecurity Certificate", file: "/CiscoCyberSecCert.pdf" },
-    { name: "Database Certificate", file: "/DatabaseCert.pdf" },
-    { name: "Networking Certificate", file: "/NetworkingCert.pdf" },
+    { name: "Cisco Cybersecurity Certificate", file: "CiscoCyberSecCert.pdf" },
+    { name: "Database Certificate", file: "DatabaseCert.pdf" },
+    { name: "Networking Certificate", file: "NetworkingCert.pdf" },
   ];
 </script>
 
@@ -13,12 +13,12 @@
       <article class="projectFrame certificateCard">
         <div class="certificatePreview">
           <iframe
-            src={`${certificate.file}#toolbar=0&navpanes=0&scrollbar=0`}
+            src={`${import.meta.env.BASE_URL}${certificate.file}#toolbar=0&navpanes=0&scrollbar=0`}
             title={`Preview of ${certificate.name}`}
           ></iframe>
           <a
             class="certificatePreviewLink"
-            href={certificate.file}
+            href={`${import.meta.env.BASE_URL}${certificate.file}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Open ${certificate.name} PDF in a new tab`}

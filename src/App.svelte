@@ -56,7 +56,7 @@
         <span aria-hidden="true"> · </span>
         <a href="mailto:jamsayre2005@gmail.com" target="_blank">Email</a>
         <span aria-hidden="true"> · </span>
-        <a href="/Sayre%20Resume.pdf" target="_blank" rel="noopener noreferrer"
+        <a href={`${import.meta.env.BASE_URL}Sayre%20Resume.pdf`} target="_blank" rel="noopener noreferrer"
           >Resume</a
         >
       </p>
