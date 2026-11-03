@@ -1,0 +1,369 @@
+/* general styles */
+header nav {
+  background-color: maroon;
+  margin: -50px -50px -20px;
+  padding: 25px 50px;
+}
+header #Introduction {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  margin: 20px -50px;
+  padding: 200px 50px;
+  color: white;
+  background-image:
+    linear-gradient(rgb(0 0 0 / 45%), rgb(0 0 0 / 45%)),
+    var(--intro-background);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+header #Introduction p {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(2rem, 6vw, 60px);
+}
+footer {
+  background-color: maroon;
+  margin: 50px -50px -50px;
+  padding: 20px 50px;
+}
+footer p {
+  text-align: center;
+  color: white;
+}
+header #mainNavBar {
+  display: flex;
+  gap: 20px;
+}
+header #Links {
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 180ms ease;
+}
+a:not(.projectFrame):hover {
+  color: maroon;
+}
+nav a {
+  color: white;
+  font-size: 20px;
+}
+header #mainNavBar a:hover,
+header #mainNavBar a[aria-current="page"] {
+  color: black;
+}
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  background-color: floralwhite;
+  font-family: "DIN", sans-serif;
+  padding:50px;
+}
+#app {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+#app > main {
+  flex: 1;
+}
+main > section + section {
+  margin-top: 56px;
+}
+/* Main css */
+.projectGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 24px;
+}
+.projectFrame {
+  display: block;
+  min-width: 0;
+  padding: 28px;
+  overflow: hidden;
+  border-radius: 20px;
+  background-color: floralwhite;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  color: inherit;
+  transition:
+    color 180ms ease,
+    transform 300ms ease,
+    box-shadow 300ms ease;
+}
+.projectFrame:hover {
+  transform: translateY(-2.5px);
+  box-shadow: 0 12px 28px rgb(0 0 0 / .15);
+}
+.projectFrame:focus-visible {
+  outline: 3px solid oklch(37.667% 0.15458 29.223);
+  outline-offset: 4px;
+}
+.projectFrame h2 {
+  margin-top: 0;
+}
+.projectFrame img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+.projectFrame img.portraitPreview {
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+.projectFrame p {
+  margin-bottom: 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+#technicalSkills {
+  display: block;
+}
+.languageGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  text-align: center;
+}
+.toolGrid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+  text-align: center;
+}
+.languageCard,
+.toolCard {
+  box-sizing: border-box;
+  display: grid;
+  min-width: 0;
+  min-height: 56px;
+  place-items: center;
+  padding: 12px;
+  border-radius: 12px;
+  background-color: floralwhite;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 8%);
+  font-size: 18px;
+}
+main > section.featuredGifSection {
+  min-height: 60vh;
+  margin-block: 50vh;
+  display: grid;
+  place-items: center;
+}
+.featuredGifCard {
+  position: relative;
+  width: min(100%, 500px);
+  overflow: hidden;
+  border: 3px solid black;
+}
+.featuredGifCaption {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 8px 12px;
+  background-color: white;
+  color: black;
+  font-size: clamp(24px, 5vw, 40px);
+  line-height: 1.1;
+  text-align: center;
+}
+.featuredGif {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+@media (max-width: 600px) {
+  body {
+    padding: 16px;
+  }
+  header #mainNavBar {
+    flex-wrap: wrap;
+    gap: 8px 16px;
+  }
+  header nav {
+    margin: -16px -16px 0;
+    padding: 16px;
+  }
+  header #Introduction {
+    min-height: 280px;
+    margin: 16px -16px;
+    padding: 48px 16px;
+    background-position: center;
+  }
+  header #Introduction p {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+  header #Links {
+    font-size: clamp(18px, 5vw, 22px);
+  }
+  header #Links p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin-block: 12px;
+  }
+  .projectGrid,
+  .certificateGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+  .projectFrame {
+    padding: 20px;
+  }
+  .projectFrame p {
+    font-size: 18px;
+  }
+  .languageGrid {
+    box-sizing: border-box;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 4px 0 10px;
+  }
+  .languageGrid {
+    grid-template-columns: repeat(6, minmax(112px, 1fr));
+  }
+  .toolGrid {
+    grid-template-columns: repeat(6, minmax(112px, 1fr));
+    gap: 8px;
+  }
+  .toolCard {
+    padding: 8px 4px;
+    font-size: clamp(11px, 2.8vw, 16px);
+  }
+  main > section.featuredGifSection {
+    min-height: auto;
+    margin-block: 24vh;
+  }
+  .featuredGifCaption {
+    font-size: clamp(20px, 7vw, 32px);
+  }
+  .certificatesPage {
+    margin-top: 32px;
+  }
+  footer {
+    margin: 40px -16px -16px;
+    padding: 16px;
+  }
+}
+/* Background css */
+#Background {
+  margin-top: 56px;
+}
+#Background > section {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+#Background .educationalBackgroundContainer {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+#Background .educationalBackgroundContainer img {
+  display: block;
+  width: 45%;
+  aspect-ratio: 16 / 9;
+  flex: 0 0 auto;
+  object-fit: cover;
+}
+#Background .educationalBackgroundContainer img.letranImage {
+  object-position: 60% 75%;
+}
+#Background .educationalBackgroundContainer > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  text-align: left;
+}
+#Background .educationalBackgroundContainer h2 {
+  margin: 0;
+}
+#Background .educationalBackgroundContainer p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: left;
+}
+@media (max-width: 600px) {
+  #Background .educationalBackgroundContainer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  #Background .educationalBackgroundContainer img {
+    width: 100%;
+    max-width: 360px;
+  }
+  #Background .educationalBackgroundContainer > div {
+    display: flex;
+    flex: initial;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+  #Background .educationalBackgroundContainer p {
+    font-size: 18px;
+  }
+}
+/* Certficate css */
+.certificateGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 24px;
+}
+.certificatesPage {
+  margin-top: 56px;
+}
+.certificatePreview {
+  position: relative;
+}
+.certificatePreview iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+  background-color: white;
+}
+.certificatePreviewLink {
+  position: absolute;
+  inset: 0;
+}
+.certificatePreviewLink:focus-visible {
+  outline: 3px solid oklch(37.667% 0.15458 29.223);
+  outline-offset: 2px;
+}
+.certificateCard h2 {
+  margin: 20px 0 8px;
+}
+.certificateCard p {
+  margin-top: 0;
+}
+@font-face {
+  font-family: "DIN";
+  src: url("./assets/fonts/DINMittelschriftStd.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "DIN Engschrift";
+  src: url("./assets/fonts/DINEngschriftStd.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
